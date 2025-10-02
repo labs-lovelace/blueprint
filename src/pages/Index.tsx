@@ -3,9 +3,42 @@ import { NeumannSection } from "@/components/sections/NeumannSection";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
 import { useState, useEffect } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
   const [showScrollIndicator, setShowScrollIndicator] = useState(false);
+  const { toast } = useToast();
+
+  // Check for success parameter and show toast
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const isSuccess = urlParams.get("success");
+
+    console.log("🔍 URL atual:", window.location.href);
+    console.log("📝 Parâmetros URL:", window.location.search);
+    console.log("✅ Parâmetro success:", isSuccess);
+
+    if (isSuccess === "true") {
+      console.log("🎉 Chamando toast de sucesso!");
+      toast({
+        title: "✅ Mensagem enviada com sucesso!",
+        description:
+          "Obrigado pelo seu contato. Entraremos em contato em breve.",
+        duration: 5000,
+      });
+
+      // Clean up URL by removing the success parameter
+      const newUrl =
+        window.location.protocol +
+        "//" +
+        window.location.host +
+        window.location.pathname;
+      console.log("🧹 Limpando URL para:", newUrl);
+      window.history.replaceState({}, document.title, newUrl);
+    } else {
+      console.log('❌ Parâmetro success não encontrado ou não é "true"');
+    }
+  }, [toast]);
 
   useEffect(() => {
     let scrollTimer: NodeJS.Timeout;
