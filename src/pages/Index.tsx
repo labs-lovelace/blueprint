@@ -1,4 +1,3 @@
-import { Header } from "@/components/sections/Header";
 import { Hero } from "@/components/sections/Hero";
 import { NeumannSection } from "@/components/sections/NeumannSection";
 import { Contact } from "@/components/sections/Contact";
@@ -58,7 +57,72 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      {/* Global Animated Background */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        {/* Moving gradient blobs with different blue tones */}
+        <div
+          className="absolute w-96 h-96 rounded-full blur-3xl opacity-15"
+          style={{
+            background:
+              "linear-gradient(45deg, hsl(204, 93%, 51%), hsl(194, 100%, 63%), hsl(204, 100%, 85%))",
+            animation: "moveBlob1 15s ease-in-out infinite",
+            left: "10%",
+            top: "20%",
+          }}
+        />
+        <div
+          className="absolute w-80 h-80 rounded-full blur-2xl opacity-12"
+          style={{
+            background:
+              "linear-gradient(135deg, hsl(194, 100%, 63%), hsl(204, 93%, 51%), hsl(204, 100%, 94%))",
+            animation: "moveBlob2 20s ease-in-out infinite reverse",
+            right: "15%",
+            bottom: "25%",
+          }}
+        />
+        <div
+          className="absolute w-64 h-64 rounded-full blur-xl opacity-10"
+          style={{
+            background:
+              "linear-gradient(225deg, hsl(204, 100%, 85%), hsl(204, 93%, 51%), hsl(194, 100%, 63%))",
+            animation: "moveBlob3 12s ease-in-out infinite",
+            left: "60%",
+            top: "15%",
+          }}
+        />
+        <div
+          className="absolute w-72 h-72 rounded-full blur-2xl opacity-18"
+          style={{
+            background:
+              "linear-gradient(315deg, hsl(204, 93%, 51%), hsl(204, 100%, 85%), hsl(194, 100%, 63%))",
+            animation: "moveBlob4 18s ease-in-out infinite reverse",
+            left: "20%",
+            bottom: "30%",
+          }}
+        />
+        <div
+          className="absolute w-56 h-56 rounded-full blur-xl opacity-12"
+          style={{
+            background:
+              "linear-gradient(90deg, hsl(194, 100%, 63%), hsl(204, 100%, 94%), hsl(204, 93%, 51%))",
+            animation: "moveBlob5 14s ease-in-out infinite",
+            right: "25%",
+            top: "40%",
+          }}
+        />
+        <div
+          className="absolute w-88 h-88 rounded-full blur-3xl opacity-8"
+          style={{
+            background:
+              "linear-gradient(180deg, hsl(204, 93%, 51%), hsl(194, 100%, 63%), hsl(204, 100%, 85%))",
+            animation: "moveBlob6 25s ease-in-out infinite",
+            left: "70%",
+            bottom: "10%",
+          }}
+        />
+      </div>
+
       {/* Scroll Indicator - Only shows when page is scrollable and after 1s of inactivity */}
       {/* {showScrollIndicator && (
         <div className="fixed bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-40">
@@ -68,7 +132,7 @@ const Index = () => {
         </div>
       )} */}
 
-      <main className="flex flex-col">
+      <main className="flex flex-col relative z-10">
         <Hero />
         <NeumannSection />
         <Contact />

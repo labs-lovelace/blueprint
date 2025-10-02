@@ -11,14 +11,12 @@ import {
   Shield,
   Zap,
   Brain,
+  Move3d,
 } from "lucide-react";
 
 export function NeumannSection() {
   return (
     <section id="neumann" className="py-32 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 gradient-subtle opacity-50" />
-
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -44,7 +42,7 @@ export function NeumannSection() {
                 <h3 className="text-2xl font-bold mb-6">Pulseira Neumann</h3>
                 <p className="text-muted-foreground mb-8">
                   Wearable de nível clínico, discreto e sem tela para evitar
-                  distrações. Resistente, durável e sempre conectado.
+                  distrações. Resistente, durável e sempre conectado
                 </p>
 
                 <div className="space-y-10 flex-1">
@@ -133,7 +131,7 @@ export function NeumannSection() {
 
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                      <Zap className="h-6 w-6 text-primary" />
+                      <Move3d className="h-6 w-6 text-accent" />
                     </div>
                     <div>
                       <div className="font-semibold">
