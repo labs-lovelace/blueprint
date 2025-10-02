@@ -108,7 +108,11 @@ export function Footer() {
                 © {new Date().getFullYear()} Lovelace. Todos os direitos
                 reservados.
               </p>
-              <p className="text-sm text-muted-foreground flex items-center gap-2">
+              <p
+                className="text-sm text-muted-foreground flex items-center gap-2"
+                translate="no"
+                data-translate="no"
+              >
                 Made with{" "}
                 <Heart className="h-4 w-4 text-health-critical fill-health-critical" />{" "}
                 by Lovelace
