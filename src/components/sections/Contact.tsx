@@ -47,13 +47,14 @@ export function Contact() {
       if (response.ok) {
         // Show success toast
         toast({
-          title: "Mensagem enviada com sucesso!",
-          description: (
+          title: (
             <div className="flex items-center gap-2">
               <CheckCircle className="h-5 w-5 text-health-success" />
-              <span>Obrigado pelo seu contato. Entraremos em contato em breve.</span>
+              <span>Mensagem enviada com sucesso!</span>
             </div>
           ),
+          description:
+            "Obrigado pelo seu contato! Entraremos em contato o mais breve possível.",
           duration: 5000,
           className:
             "bg-card/95 backdrop-blur-sm border-health-success/20 shadow-neumann",
@@ -67,8 +68,9 @@ export function Contact() {
     } catch (error) {
       console.error("Erro ao enviar formulário:", error);
       toast({
-        title: "Erro ao enviar mensagem",
-        description: "Tente novamente em alguns instantes.",
+        title: ":( Erro ao enviar mensagem",
+        description:
+          "Tente novamente em alguns instantes. Estamos trabalhando para resolver o problema.",
         duration: 5000,
         variant: "destructive",
       });
