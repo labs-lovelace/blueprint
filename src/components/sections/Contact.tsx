@@ -34,8 +34,6 @@ export function Contact() {
       form.append("_captcha", "false");
       form.append("_template", "table");
 
-      console.log("Enviando formulário via AJAX...");
-
       const response = await fetch(
         "https://formsubmit.co/lovelaceneumann@gmail.com",
         {

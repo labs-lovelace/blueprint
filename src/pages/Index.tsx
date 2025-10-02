@@ -14,12 +14,7 @@ const Index = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const isSuccess = urlParams.get("success");
 
-    console.log("🔍 URL atual:", window.location.href);
-    console.log("📝 Parâmetros URL:", window.location.search);
-    console.log("✅ Parâmetro success:", isSuccess);
-
     if (isSuccess === "true") {
-      console.log("🎉 Chamando toast de sucesso!");
       toast({
         title: "✅ Mensagem enviada com sucesso!",
         description:
@@ -33,10 +28,7 @@ const Index = () => {
         "//" +
         window.location.host +
         window.location.pathname;
-      console.log("🧹 Limpando URL para:", newUrl);
       window.history.replaceState({}, document.title, newUrl);
-    } else {
-      console.log('❌ Parâmetro success não encontrado ou não é "true"');
     }
   }, [toast]);
 
